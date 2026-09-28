@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ForwardLine — The Constraint Call</title>
-<meta name="description" content="Two hours to find the one thing holding your business back. Book the Growth Audit — plus 4 free growth tools." />
+<title>ForwardLine | The MSP Meeting Machine</title>
+<meta name="description" content="Double the meetings from the ad spend you already pay for, within 90 days. We fix everything after the click. We don't touch your ads or your agency." />
+<!-- Test page: keep out of search until we go live. -->
+<meta name="robots" content="noindex" />
 <base href="/growthcall/" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 
@@ -17,16 +19,41 @@
 <style>
   html { scroll-behavior: smooth; }
   body { margin: 0; }
+
+  /* Hero: tight on phones so headline, sub and CTA sit above the fold. */
+  .mm-hero { padding: clamp(1.75rem, 6vw, 6rem) var(--gutter) clamp(2.5rem, 7vw, 6.5rem); }
+  .mm-h1 { font-size: clamp(2.25rem, 4.2vw, 3.6rem); line-height: 1.05; }
+  @media (min-width: 900px) {
+    .mm-hero { grid-template-columns: 1.1fr 1fr !important; }
+    .mm-h1 span { white-space: nowrap; }
+  }
+  .mm-sub { font-size: clamp(1.0625rem, 1.6vw, 1.25rem); line-height: 1.5; }
+
+  .mm-vsl:hover .mm-play, .mm-vsl:focus-visible .mm-play { transform: translate(-50%, -50%) scale(1.07) !important; }
+  .mm-vsl:focus-visible, .mm-choice:focus-within, .mm-select:focus { outline: none; box-shadow: var(--focus-ring); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .mm-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23181E30' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.9rem center !important;
+  }
+  .mm-select:focus { border-color: var(--gold) !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
 </style>
 </head>
 <body>
 <div id="root"></div>
 
-<script type="text/babel" src="./Screens.jsx?v=3"></script>
+<script type="text/babel" src="./Screens.jsx?v=4"></script>
 <script type="text/babel">
   window.__dsReady.then(() => {
     ReactDOM.createRoot(document.getElementById('root')).render(
-      React.createElement(CCConstraintPage)
+      React.createElement(MMMeetingMachinePage)
     );
   });
 </script>
