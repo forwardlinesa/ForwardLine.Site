@@ -69,10 +69,10 @@ function FLWhatWeDo() {
         </div>
       </FLSection>
 
-      {/* ── 2. Discovery Call — the entry-point service ──
-           Lead with this: a single two-hour call that ends with an
-           actionable written plan. Designed to be the first step for
-           most clients, before any longer engagement. */}
+      {/* ── 2. First step of the new offer (the Leak Snapshot call) ──
+           A short call: their own page, where clicks drop off, how fast
+           leads get called back, then how we fix it. CTA goes to the
+           landing page (go.forwardline.co.za). */}
       <FLSection
         id="fl-wwd-discovery"
         style={{
@@ -97,9 +97,9 @@ function FLWhatWeDo() {
                 background: FL_NAVY, color: FL_IVORY_2,
                 padding: '18px 22px', maxWidth: 240,
               }}>
-                <div style={{ fontFamily: FL_DISPLAY, fontSize: 44, lineHeight: 1, color: FL_SAND_2, fontWeight: 500 }}>2 hrs</div>
+                <div style={{ fontFamily: FL_DISPLAY, fontSize: 44, lineHeight: 1, color: FL_SAND_2, fontWeight: 500 }}>5 min</div>
                 <div style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', marginTop: 6, color: 'rgba(244,239,227,.7)' }}>
-                  One focused conversation about your business
+                  Every lead gets a call within 5 minutes
                 </div>
               </div>
             )}
@@ -118,20 +118,20 @@ function FLWhatWeDo() {
               fontSize: isMobile ? 32 : 48,
               lineHeight: 1.05, fontWeight: 500, color: FL_NAVY, letterSpacing: -0.5,
             }}>
-              A two-hour call.<br />
-              <span style={{ fontStyle: 'italic' }}>An action plan you can use on Monday.</span>
+              A short call.<br />
+              <span style={{ fontStyle: 'italic' }}>We show you where your clicks drop off.</span>
             </h2>
             <p className="fl-reveal fl-r4" style={{
               margin: 0, fontSize: 14.5, color: FL_GRAPHITE,
               lineHeight: 1.8, fontFamily: FL_BODY,
             }}>
-              Before the quarter, before anything else — sit down with us for one focused conversation. You walk us through the business. Help us understand the numbers, the systems, the people and the known bottlenecks. By the end of the call you'll know exactly what to fix first, and how. A written plan lands in your inbox the next day.
+              For South African businesses spending R10,000+ a month on ads. On a short call we open your own page and show you where the clicks drop off. We check how fast your leads get called back. Then we show you how we fix it. Your agency keeps the ads. We own what happens after the click: the page, the form, the video, and a call to every lead within 5 minutes.
             </p>
             <div className="fl-reveal fl-r5" style={{ display: 'flex', flexDirection: 'column', marginTop: 4 }}>
               {[
-                { t: 'Two focused hours.',           d: 'In person where possible, or over a call.' },
-                { t: 'The business on paper.',       d: 'Numbers, systems, people, known bottlenecks — laid on the table.' },
-                { t: 'A written plan the next day.', d: 'A short, actionable document you can hand to your team.' },
+                { t: 'Your page, on screen.',  d: 'We show you where your clicks drop off.' },
+                { t: 'Your callback speed.',   d: 'We check how fast your leads get a call back.' },
+                { t: 'How we fix it.',         d: 'Page, form, video, and a call to every lead within 5 minutes.' },
               ].map((p, i) => (
                 <div key={i} style={{
                   display: 'flex', gap: 18, padding: '12px 0',
@@ -147,7 +147,7 @@ function FLWhatWeDo() {
               ))}
             </div>
             <div className="fl-reveal fl-r6" style={{ display: 'flex', gap: 14, marginTop: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-              <FLButton href={flGo('button', 'wwd')} variant="filled">See how we fix it →</FLButton>
+              <FLButton href={flGo('button', 'what-we-do-section')} variant="filled">See how we fix it →</FLButton>
             </div>
           </div>
         </div>
