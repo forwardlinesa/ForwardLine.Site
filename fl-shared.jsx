@@ -32,16 +32,18 @@ const FL_PROMO_H   = 53;
 /* ─────────────────────────────────────────────
    Promo banner — single source of truth
    Set enabled:false to pull the banner from every page instantly.
-   landingUrl: PASTE the Growth Audit landing page URL here once it's live.
+   landingUrl: the new offer's landing page (go.forwardline.co.za).
+   Wording matches that page's hero. *Short fields are the phone version.
    ───────────────────────────────────────────── */
 const FL_PROMO = {
-  enabled:    true,
-  landingUrl: 'https://www.forwardline.co.za/growthcall',
-  badge:      'New Service',
-  headline:   'Two-Hour Growth Audit',
-  discount:   '95% OFF',
-  urgency:    'Launch Special · Limited Spots',
-  cta:        'Book Now',
+  enabled:       true,
+  landingUrl:    'https://go.forwardline.co.za/?utm_source=forwardline-site&utm_medium=banner&utm_campaign=site-banner',
+  badge:         'New Service',
+  badgeShort:    'New',
+  headline:      'Your ads get clicks. Where are the meetings?',
+  headlineShort: 'Clicks but no meetings?',
+  cta:           'See how we fix it',
+  ctaShort:      'See how',
 };
 
 /* Utility strip is currently hidden (App() no longer renders FLUtilityStrip),
@@ -558,9 +560,9 @@ function FLPromoBanner() {
   const isMobile = bp === 'sm' || bp === 'xs';
   if (!FL_PROMO.enabled) return null;
 
-  const headlineText = isMobile ? 'Growth Audit' : FL_PROMO.headline;
-  const priceText     = isMobile ? 'Launch Special' : FL_PROMO.discount;
-  const ctaText       = isMobile ? 'Book' : FL_PROMO.cta;
+  const badgeText    = isMobile ? FL_PROMO.badgeShort : FL_PROMO.badge;
+  const headlineText = isMobile ? FL_PROMO.headlineShort : FL_PROMO.headline;
+  const ctaText      = isMobile ? FL_PROMO.ctaShort : FL_PROMO.cta;
 
   return (
     <a
@@ -575,8 +577,8 @@ function FLPromoBanner() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: isMobile ? 3 : 20,
-        padding: isMobile ? '0 4px' : '0 40px',
+        gap: isMobile ? 6 : 20,
+        padding: isMobile ? '0 6px' : '0 40px',
         textDecoration: 'none',
         zIndex: 99,
         borderBottom: `1px solid rgba(24,30,48,.25)`,
@@ -588,25 +590,14 @@ function FLPromoBanner() {
         textTransform: 'uppercase', background: FL_NAVY, color: FL_SAND_2,
         padding: isMobile ? '3px 4px' : '4px 9px', flexShrink: 0, fontWeight: 600,
       }}>
-        {FL_PROMO.badge}
+        {badgeText}
       </span>
       <span style={{
-        fontFamily: FL_BODY, fontWeight: 700, fontSize: isMobile ? 15 : 17,
-        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flexShrink: isMobile ? 0 : 1,
+        fontFamily: FL_BODY, fontWeight: 700, fontSize: isMobile ? 14 : 17,
+        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flexShrink: 1, minWidth: 0,
       }}>
         {headlineText}
       </span>
-      <span style={{
-        fontFamily: FL_CAPS, fontWeight: 700, fontSize: isMobile ? 14 : 17,
-        letterSpacing: isMobile ? 0 : 1, flexShrink: 0, whiteSpace: 'nowrap',
-      }}>
-        {priceText}
-      </span>
-      {!isMobile && (
-        <span style={{ fontFamily: FL_BODY, fontWeight: 700, fontSize: 13, whiteSpace: 'nowrap' }}>
-          {FL_PROMO.urgency}
-        </span>
-      )}
       <span style={{
         fontFamily: FL_CAPS, fontSize: isMobile ? 13 : 13, letterSpacing: isMobile ? 0 : 2,
         textTransform: 'uppercase', textDecoration: 'underline', textUnderlineOffset: 3,
