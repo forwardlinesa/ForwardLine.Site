@@ -110,7 +110,7 @@ function FLWhatWeDo() {
               padding:'8px 0', borderTop:`1px solid ${FL_GOLD}`, borderBottom:`1px solid ${FL_GOLD}`,
             }}>
               <span style={{ color: FL_GOLD, fontSize: 8, letterSpacing: 4, transform:'translateY(-1px)' }}>◆</span>
-              <FLEyebrow color={FL_NAVY} style={{ letterSpacing: 4.5, fontWeight: 600 }}>Start Here · The Growth Audit</FLEyebrow>
+              <FLEyebrow color={FL_NAVY} style={{ letterSpacing: 4.5, fontWeight: 600 }}>Start Here</FLEyebrow>
               <span style={{ color: FL_GOLD, fontSize: 8, letterSpacing: 4, transform:'translateY(-1px)' }}>◆</span>
             </div>
             <h2 className="fl-reveal fl-r3" style={{
@@ -147,7 +147,7 @@ function FLWhatWeDo() {
               ))}
             </div>
             <div className="fl-reveal fl-r6" style={{ display: 'flex', gap: 14, marginTop: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-              <FLButton href="#/contact" variant="filled">Book Your Growth Audit →</FLButton>
+              <FLButton href={flGo('button', 'wwd')} variant="filled">See how we fix it →</FLButton>
             </div>
           </div>
         </div>
@@ -179,7 +179,7 @@ function FLWhatWeDo() {
             </div>
             {!isMobile && (
               <p className="fl-reveal fl-r3" style={{ margin: 0, maxWidth: 380, fontSize: 13.5, color: 'rgba(244,239,227,.7)', lineHeight: 1.8, fontFamily: FL_BODY }}>
-                When the audit shows there's further to go, this is how we take you there — a full quarter of execution. Each phase has a defined output, so you always know where we are and what comes next. No surprises, no scope creep. We set out to deliver what is most valuable — that's a promise.
+                When there's further to go, this is how we take you there: a full quarter of execution. Each phase has a defined output, so you always know where we are and what comes next. No surprises, no scope creep. We set out to deliver what is most valuable — that's a promise.
               </p>
             )}
           </div>
@@ -228,7 +228,7 @@ function FLWhatWeDo() {
             gap: 24, flexWrap: 'wrap',
           }}>
             <span style={{ fontFamily: FL_DISPLAY, fontStyle: 'italic', fontSize: isMobile ? 18 : 20, color: 'rgba(244,239,227,.7)', maxWidth: 420 }}>
-              The audit comes first — the quarter is where we execute together.
+              The quarter is where we execute together.
             </span>
             <FLButton href="#/contact" variant="sand">Reserve Your Quarter →</FLButton>
           </div>
@@ -264,7 +264,7 @@ function FLWhatWeDo() {
           }}>
             {[
               { n: 'i.',   t: 'Weekly Working Sessions', d: '90 minutes, every week, with the same consultant. Agendas shared 24h ahead.' },
-              { n: 'ii.',  t: 'Growth Audit',            d: 'A written diagnostic of how the business runs today.' },
+              { n: 'ii.',  t: 'Written Diagnostic',      d: 'A written diagnostic of how the business runs today.' },
               { n: 'iii.', t: 'Bottleneck Map',          d: 'Every constraint ranked. Visual, single-page.' },
               { n: 'iv.',  t: 'Quarterly Roadmap',       d: 'Milestones, executable tasks and metrics. An executable plan — not a fluffy document or one-off PDF.' },
               { n: 'v.',   t: 'Direct Line',             d: 'Phone, email and WhatsApp access between sessions. We answer same-day.' },

@@ -233,7 +233,7 @@ function FLToolWidget({ tool }) {
           }}>
             <span>←</span> All Free Tools
           </a>
-          <FLButton href="#/contact" variant="outline" style={{ padding: '10px 20px', fontSize: 10 }}>Book a Call →</FLButton>
+          <FLButton href={flGo('button', 'tool-' + tool.slug)} variant="outline" style={{ padding: '10px 20px', fontSize: 10 }}>See how we fix it →</FLButton>
         </div>
         <div style={{ flex: 1 }}>
           <FLToolFrame src={tool.html} title={tool.title} />
@@ -283,11 +283,11 @@ function FLToolWidget({ tool }) {
                 <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_GOLD }}>In the workshop</span>
               </div>
               <p style={{ margin: 0, fontSize: 14, color: FL_GRAPHITE, lineHeight: 1.8, maxWidth: 560 }}>
-                We're finishing this one off. It'll open right here — free to use, the same instrument we run inside a quarter. In the meantime, the rest of the toolkit is ready, and a growth audit walks you through the lot against your own numbers.
+                We're finishing this one off. It'll open right here — free to use, the same instrument we run inside a quarter. In the meantime, the rest of the toolkit is ready to use.
               </p>
 
               <div style={{ display: 'flex', gap: 14, marginTop: 12, flexWrap: 'wrap' }}>
-                <FLButton href="#/contact" variant="filled">Book Your Growth Audit →</FLButton>
+                <FLButton href={flGo('button', 'tool-' + tool.slug)} variant="filled">See how we fix it →</FLButton>
                 <FLButton href="#/tools" variant="outline">Browse the Toolkit</FLButton>
               </div>
             </div>

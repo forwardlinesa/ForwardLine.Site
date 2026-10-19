@@ -293,7 +293,7 @@ function FLHome() {
               Walk away with a plan you can act on now, and start seeing results this quarter, not next year.
             </p>
             <div className="fl-reveal fl-r5" style={{ display:'flex', gap:14, marginTop:4, flexWrap:'wrap', justifyContent:'center' }}>
-              <FLButton href="#/contact" variant="sand">Book Your Growth Audit →</FLButton>
+              <FLButton href={flGo('button', 'home-hero')} variant="sand">See how we fix it →</FLButton>
               <FLButton href="#/wwd"     variant="ghost">See How We Work</FLButton>
             </div>
           </div>
@@ -383,7 +383,7 @@ function FLHome() {
                 margin:0, fontSize:17, color: FL_GRAPHITE,
                 lineHeight:1.8, maxWidth:400, fontFamily: FL_BODY,
               }}>
-                No fluff. No eight-month engagement. A focused two-hour session built around what will actually move your business forward.
+                No fluff. No eight-month engagement. Just the work that will actually move your business forward.
               </p>
             )}
           </div>
@@ -393,7 +393,7 @@ function FLHome() {
             gap:24,
           }}>
             {[
-              { n:'01', t:'Fresh Eyes On Old Systems', d:'A complete growth audit — we see the assumptions you have stopped questioning, and the dependencies nobody wrote down.', img: FL_IMG.signature },
+              { n:'01', t:'Fresh Eyes On Old Systems', d:'A fresh look at your business. We see the assumptions you have stopped questioning, and the dependencies nobody wrote down.', img: FL_IMG.signature },
               { n:'02', t:'Bottleneck Detection',      d:'We map where time, money and momentum are leaking — across people, process and tooling — and prioritize what will return the most value, and fix it first.', img: FL_IMG.kanban },
               { n:'03', t:'A Measurable Growth Plan',  d:'A clear growth plan: the bottlenecks named, the fixes ordered, and a step-by-step roadmap with milestones and metrics. No 80-page PDF — a working document that delivers results when executed.', img: FL_IMG.desk },
             ].map((card, i) => (
@@ -599,12 +599,12 @@ function FLHome() {
             fontSize: isMobile ? 20 : 24,
             color:'rgba(244,239,227,.78)', maxWidth:640, lineHeight:1.55,
           }}>
-            Two hours is all it takes to sit down, get your growth plan, and start winning back time and money — so you can grow the business you always pictured.
+            Your ads get clicks. We turn them into meetings, so you can grow the business you always pictured.
           </p>
           <div className="fl-reveal fl-r5" style={{
             display:'flex', gap:14, marginTop:14, flexWrap:'wrap', justifyContent:'center',
           }}>
-            <FLButton href="#/contact" variant="sand">Book Your Growth Audit →</FLButton>
+            <FLButton href={flGo('button', 'home-cta')} variant="sand">See how we fix it →</FLButton>
           </div>
         </div>
       </FLSection>

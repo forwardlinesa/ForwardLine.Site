@@ -1,5 +1,17 @@
 {
   "buildCommand": "",
   "installCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/growthcall",
+      "destination": "https://go.forwardline.co.za/?utm_source=forwardline-site&utm_medium=redirect&utm_campaign=growthcall",
+      "permanent": true
+    },
+    {
+      "source": "/growthcall/:path*",
+      "destination": "https://go.forwardline.co.za/?utm_source=forwardline-site&utm_medium=redirect&utm_campaign=growthcall",
+      "permanent": true
+    }
+  ]
 }

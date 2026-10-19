@@ -46,6 +46,13 @@ const FL_PROMO = {
   ctaShort:      'See how',
 };
 
+/* Link to the new offer's landing page with UTMs.
+   flGo('button', 'home-hero') → https://go.forwardline.co.za/?utm_source=forwardline-site&... */
+function flGo(medium, campaign) {
+  return 'https://go.forwardline.co.za/?utm_source=forwardline-site&utm_medium='
+    + encodeURIComponent(medium) + '&utm_campaign=' + encodeURIComponent(campaign);
+}
+
 /* Utility strip is currently hidden (App() no longer renders FLUtilityStrip),
    so the promo banner is the sole fixed top bar. FL_STRIP_H — the runtime
    body padding-top / scroll-padding-top / snap reference — is therefore just
@@ -974,7 +981,7 @@ Object.assign(window, {
   flTrack, flTrackTool, FLConsent,
   FL_NAVY, FL_NAVY_2, FL_INK, FL_GRAPHITE, FL_STONE,
   FL_SAND, FL_SAND_2, FL_IVORY, FL_IVORY_2, FL_LINEN, FL_GOLD,
-  FL_RAIL_STROKE, FL_STRIP_H, FL_UTILITY_H, FL_PROMO_H, FL_PROMO,
+  FL_RAIL_STROKE, FL_STRIP_H, FL_UTILITY_H, FL_PROMO_H, FL_PROMO, flGo,
   FL_DISPLAY, FL_CAPS, FL_BODY, FL_IMG,
   FL_INTAKE, flIntake, useFLIntake, flSpotsPhrase, flLeftPhrase, flTakenPhrase, flShortPhrase, flStatusLabel, flFillPercent,
   useBreakpoint, useViewportHeight, useSnapTracker, useRevealOnEnter,

@@ -199,13 +199,15 @@ function FLContact() {
             ) : (
               <form onSubmit={handleSubmit}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
-                  <FLEyebrow>Apply for a Growth Audit</FLEyebrow>
+                  <a href={flGo('link', 'contact')} onClick={() => flTrack('cta_click', { cta_label: 'Running ads link', page_path: '#/contact' })} style={{ textDecoration: 'none' }}>
+                    <FLEyebrow style={{ fontSize: 12, letterSpacing: 2.5, lineHeight: 1.8, textDecoration: 'underline', textUnderlineOffset: 4 }}>Running ads? See how we turn clicks into meetings →</FLEyebrow>
+                  </a>
                 </div>
                 <h2 style={{ margin: '14px 0 8px', fontFamily: FL_DISPLAY, fontSize: isMobile ? 28 : 38, fontWeight: 500, color: FL_NAVY, lineHeight: 1.1, letterSpacing: -0.3 }}>
                   Tell us a little about your business.
                 </h2>
                 <p style={{ margin: '0 0 32px', fontSize: 14, color: FL_GRAPHITE, lineHeight: 1.75, fontFamily: FL_BODY, maxWidth: 520 }}>
-                  Tell us where the business is and where it is stuck. We will come back to you within one business day to schedule the growth audit.
+                  Tell us where the business is and where it is stuck. We will come back to you within one business day to schedule a call.
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 22 }}>
@@ -272,7 +274,7 @@ function FLContact() {
           gap: 16, fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_GRAPHITE,
           flexWrap: 'wrap',
         }}>
-          {['◆ One business day reply', 'Direct line to the team', 'No-obligation growth audit', 'Confidential by default'].map(t => (
+          {['◆ One business day reply', 'Direct line to the team', 'No-obligation first call', 'Confidential by default'].map(t => (
             <span key={t}>{t}</span>
           ))}
         </div>
