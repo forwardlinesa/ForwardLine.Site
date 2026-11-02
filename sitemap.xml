@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The site uses hash routes (#/wwd, #/tools, #/contact). Crawlers treat
+     those as the same URL, so only the home page is listed. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.forwardline.co.za/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+</urlset>
