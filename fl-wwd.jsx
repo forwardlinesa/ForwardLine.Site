@@ -5,6 +5,24 @@
    so the rail tracks crisply.
    ───────────────────────────────────────────── */
 
+/* FAQ — same wording as the FAQPage JSON-LD and the static copy in
+   index.html. Change all three together. */
+const FL_FAQ = [
+  { q: 'What does ForwardLine do?', a: 'We turn ad clicks into booked meetings for South African IT companies and MSPs. We build the page, sales video and form. Our AI caller Susie phones each lead within 5 minutes.' },
+  { q: 'Who is it for?', a: 'IT companies and MSPs in South Africa that spend R10,000 or more a month on ads. Someone on your team takes the meetings.' },
+  { q: 'My ads get clicks but no new clients. Can you help?', a: 'Often the ad is fine and the leak comes after the click. We fix the page, the video, the form and the call. Your agency keeps the ads.' },
+  { q: 'What is a VSL?', a: 'VSL means video sales letter. It’s a short sales video on your page. It answers the questions a first sales call usually covers.' },
+  { q: 'Do you write my sales video script?', a: 'You answer our questions in order. You send the answers as a voice note, text or a call. We review them and help you fix the script. You get this after signing.' },
+  { q: 'Who is Susie?', a: 'Susie is our AI caller. She phones each lead within 5 minutes, says she’s AI, asks a few questions and books the meeting in your calendar.' },
+  { q: 'How do you turn cold leads into warm leads?', a: 'Cold leads don’t know you yet. The page and video show them who you are. The form shows who’s serious. Then Susie phones them.' },
+  { q: 'Do you build done-for-you sales funnels?', a: 'Yes. We build a VSL funnel: page, sales video, form and call. You take the meetings.' },
+  { q: 'Is this conversion rate optimisation?', a: 'Yes. CRO and pipeline automation are the trade names. We keep testing your page and we automate the first call.' },
+  { q: 'Do I keep my agency?', a: 'Yes. They run the ads. We take over after the click.' },
+  { q: 'What does “if you qualify” mean?', a: 'Your page turns under about 3% of visitors into leads today, and you run at least R10,000 a month in ads. We check this on the call. We agree your starting number before we begin.' },
+  { q: 'What does it cost?', a: 'Our first MSP partners pay R9,375 a month excl VAT with no setup fee, on a 12-month term. It’s below our cost. We do it for the proof. After that it’s R12,500 a month plus a once-off setup fee, excl VAT. Your ad spend stays separate.' },
+  { q: 'What do you need from me?', a: 'One DNS record, which takes about 5 minutes. We help on a screen share. Your agency points the ads to the new page.' },
+];
+
 function FLWhatWeDo() {
   const bp = useBreakpoint();
   const isMobile = bp === 'sm' || bp === 'xs';
@@ -41,27 +59,23 @@ function FLWhatWeDo() {
           <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? 32 : 80, alignItems: 'start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                <FLEyebrow className="fl-reveal fl-r1">We Help You Close</FLEyebrow>
+                <FLEyebrow className="fl-reveal fl-r1">What we do</FLEyebrow>
                 <h1 className="fl-reveal fl-r2" style={{
                   margin: 0, fontFamily: FL_DISPLAY,
                   fontSize: isMobile ? 44 : 76,
                   lineHeight: 1.02, fontWeight: 500, color: FL_NAVY, letterSpacing: -1,
                 }}>
-                  The gap between<br />
-                  where you are<br />
-                  <span style={{ fontStyle: 'italic' }}>and where you<br />could be.</span>
+                  Your agency’s job<br />
+                  <span style={{ fontStyle: 'italic' }}>ends at the click.</span>
                 </h1>
               </div>
               <div className="fl-reveal fl-r3" style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingTop: isMobile ? 0 : 14 }}>
                 <p style={{ margin: 0, fontSize: 16, color: FL_INK, lineHeight: 1.8, fontFamily: FL_BODY }}>
-                  Most businesses stop growing — not because of effort, but because they're focused on the wrong problem. There are invisible systems keeping you from the next stage: the meeting that should not exist, the role that quietly does two jobs, the system everybody uses but nobody knows why.
-                </p>
-                <p style={{ margin: 0, fontSize: 14.5, color: FL_GRAPHITE, lineHeight: 1.8, fontFamily: FL_BODY }}>
-                  ForwardLine is structured outside attention — designed to surface those failures, prioritise them, and put a working plan in your hands. We sit alongside your leadership team, following a plan that puts your business back on the road to growth.
+                  Your sales team starts at the meeting. Everything in between is nobody’s job. We make it ours.
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 6 }}>
                   <span style={{ width: 56, height: 1, background: FL_NAVY }} />
-                  <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_NAVY }}>Diagnose · Plan · Execute · Review</span>
+                  <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_NAVY }}>Page · Video · Form · Call</span>
                 </div>
               </div>
             </div>
@@ -99,7 +113,7 @@ function FLWhatWeDo() {
               }}>
                 <div style={{ fontFamily: FL_DISPLAY, fontSize: 44, lineHeight: 1, color: FL_SAND_2, fontWeight: 500 }}>5 min</div>
                 <div style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', marginTop: 6, color: 'rgba(244,239,227,.7)' }}>
-                  Every lead gets a call within 5 minutes
+                  Susie phones each lead within 5 minutes
                 </div>
               </div>
             )}
@@ -125,13 +139,13 @@ function FLWhatWeDo() {
               margin: 0, fontSize: 14.5, color: FL_GRAPHITE,
               lineHeight: 1.8, fontFamily: FL_BODY,
             }}>
-              For South African businesses spending R10,000+ a month on ads. On a short call we open your own page and show you where the clicks drop off. We check how fast your leads get called back. Then we show you how we fix it. Your agency keeps the ads. We own what happens after the click: the page, the form, the video, and a call to every lead within 5 minutes.
+              It’s for South African IT companies and MSPs that spend R10,000 or more a month on ads. We open your page and show you where the clicks drop off. We check how fast your leads get a call back. Then we show you how we fix it. Your agency keeps the ads. We take over after the click.
             </p>
             <div className="fl-reveal fl-r5" style={{ display: 'flex', flexDirection: 'column', marginTop: 4 }}>
               {[
                 { t: 'Your page, on screen.',  d: 'We show you where your clicks drop off.' },
                 { t: 'Your callback speed.',   d: 'We check how fast your leads get a call back.' },
-                { t: 'How we fix it.',         d: 'Page, form, video, and a call to every lead within 5 minutes.' },
+                { t: 'How we fix it.',         d: 'Page, video, form and a call from Susie within 5 minutes.' },
               ].map((p, i) => (
                 <div key={i} style={{
                   display: 'flex', gap: 18, padding: '12px 0',
@@ -147,39 +161,39 @@ function FLWhatWeDo() {
               ))}
             </div>
             <div className="fl-reveal fl-r6" style={{ display: 'flex', gap: 14, marginTop: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-              <FLButton href={flGo('button', 'what-we-do-section')} variant="filled">See how we fix it →</FLButton>
+              <FLButton href={flGo('button', 'what-we-do-section')} variant="filled">Book my call →</FLButton>
             </div>
           </div>
         </div>
       </FLSection>
 
-      {/* ── 3. The Quarter — process ── */}
+      {/* ── 3. The four steps — process (ID kept for footer deep link) ── */}
       <FLSection
         id="fl-wwd-process"
         style={{
           minHeight: sectionMinH,
           background: FL_NAVY, color: FL_IVORY_2,
           display: 'flex', alignItems: 'center',
-          padding: isMobile ? '72px 24px' : '60px 40px',
+          padding: isMobile ? '72px 24px' : '40px 40px',
           backgroundImage: `radial-gradient(circle at 20% 0%, rgba(167,138,78,.08), transparent 50%), radial-gradient(circle at 80% 100%, rgba(196,184,163,.06), transparent 50%)`,
         }}
       >
         <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
           <div style={{
             display: 'flex', alignItems: isMobile ? 'flex-start' : 'flex-end',
-            justifyContent: 'space-between', marginBottom: isMobile ? 36 : 48,
+            justifyContent: 'space-between', marginBottom: isMobile ? 36 : 36,
             flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 18 : 0,
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 620 }}>
-              <FLEyebrow className="fl-reveal fl-r1" color="rgba(244,239,227,.7)">Ready To Go Further</FLEyebrow>
+              <FLEyebrow className="fl-reveal fl-r1" color="rgba(244,239,227,.7)">The four steps</FLEyebrow>
               <h2 className="fl-reveal fl-r2" style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 36 : 52, lineHeight: 1.05, fontWeight: 500, color: FL_IVORY_2, letterSpacing: -0.5 }}>
-                When you want<br />
-                <span style={{ fontStyle: 'italic', color: FL_SAND_2 }}>the next level.</span>
+                From click<br />
+                <span style={{ fontStyle: 'italic', color: FL_SAND_2 }}>to booked meeting.</span>
               </h2>
             </div>
             {!isMobile && (
               <p className="fl-reveal fl-r3" style={{ margin: 0, maxWidth: 380, fontSize: 13.5, color: 'rgba(244,239,227,.7)', lineHeight: 1.8, fontFamily: FL_BODY }}>
-                When there's further to go, this is how we take you there: a full quarter of execution. Each phase has a defined output, so you always know where we are and what comes next. No surprises, no scope creep. We set out to deliver what is most valuable — that's a promise.
+                We take over after the click: page, video, form and call.
               </p>
             )}
           </div>
@@ -194,10 +208,10 @@ function FLWhatWeDo() {
               <div style={{ position: 'absolute', top: 30, left: 24, right: 24, height: 1, background: 'rgba(244,239,227,.15)' }} />
             )}
             {[
-              { n: '01', wk: 'Week 1 – 2',  t: 'Diagnose', d: 'Leadership interviews, operational shadowing and a top-to-bottom systems audit. A candid map of how the business actually runs.' },
-              { n: '02', wk: 'Week 3 – 4',  t: 'Plan',     d: 'Your bottlenecks ranked by impact. We co-author a quarterly roadmap with milestones, executable tasks and a measurable end state.' },
-              { n: '03', wk: 'Week 5 – 11', t: 'Execute',  d: 'Weekly working sessions, real-time adjustments and direct access. We ship alongside your team, working together to reach success.' },
-              { n: '04', wk: 'Week 12',     t: 'Review',   d: 'A measurable review of the quarter — what was achieved, what improved, and how much closer the business is to the goal we set. A formal handover, and a decision: continue with a second quarter, or operate independently from here.' },
+              { n: '01', wk: 'The page',  t: 'A page with one job.', d: 'Your ads land on a page built for them. It asks for one thing: the booking. We write, build and host it. Your main site stays as it is.' },
+              { n: '02', wk: 'The video', t: 'Answer the questions. You have your script.', d: 'We give you the questions in order. Send your answers as a voice note, or talk us through them on a call. We review it, ask a few questions and help you fix it. Your leads watch the video before they talk to you. So they arrive knowing what you do.' },
+              { n: '03', wk: 'The form',  t: 'A few questions show who’s serious.', d: 'Your form asks a few short questions before anyone books. The answers show who’s a real buyer.' },
+              { n: '04', wk: 'The call',  t: 'Your lead’s phone rings 5 minutes after the form.', d: 'Our AI caller Susie makes that call. She says she’s AI. She asks a few questions. Then she books the meeting in your calendar.' },
             ].map((p, i) => (
               <div key={p.n} className={`fl-reveal fl-r${(i % 4) + 2}`} style={{
                 position: 'relative',
@@ -216,21 +230,21 @@ function FLWhatWeDo() {
                   <span style={{ fontFamily: FL_DISPLAY, fontSize: 52, fontWeight: 500, color: FL_SAND_2, lineHeight: 1, letterSpacing: -1 }}>{p.n}</span>
                 </div>
                 <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_SAND, display: 'block', marginBottom: 8 }}>{p.wk}</span>
-                <h3 style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: 28, fontWeight: 600, color: FL_IVORY_2, marginBottom: 10 }}>{p.t}</h3>
+                <h3 style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: 22, fontWeight: 600, color: FL_IVORY_2, lineHeight: 1.2, marginBottom: 10 }}>{p.t}</h3>
                 <p style={{ margin: 0, fontSize: 13.5, color: 'rgba(244,239,227,.7)', lineHeight: 1.7 }}>{p.d}</p>
               </div>
             ))}
           </div>
 
           <div style={{
-            marginTop: isMobile ? 40 : 56, paddingTop: 24, borderTop: '1px solid rgba(244,239,227,.15)',
+            marginTop: isMobile ? 40 : 36, paddingTop: 24, borderTop: '1px solid rgba(244,239,227,.15)',
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             gap: 24, flexWrap: 'wrap',
           }}>
             <span style={{ fontFamily: FL_DISPLAY, fontStyle: 'italic', fontSize: isMobile ? 18 : 20, color: 'rgba(244,239,227,.7)', maxWidth: 420 }}>
-              The quarter is where we execute together.
+              You take the meetings.
             </span>
-            <FLButton href="#/contact" variant="sand">Reserve Your Quarter →</FLButton>
+            <FLButton href="#/contact" variant="sand">Book my call →</FLButton>
           </div>
         </div>
       </FLSection>
@@ -250,11 +264,11 @@ function FLWhatWeDo() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <FLEyebrow className="fl-reveal fl-r1">Included</FLEyebrow>
               <h2 className="fl-reveal fl-r2" style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 30 : 44, lineHeight: 1.05, fontWeight: 500, color: FL_NAVY, letterSpacing: -0.4 }}>
-                What's included in <span style={{ fontStyle: 'italic' }}>every</span> engagement.
+                What <span style={{ fontStyle: 'italic' }}>you</span> get
               </h2>
             </div>
             <p className="fl-reveal fl-r3" style={{ margin: 0, fontSize: 14.5, color: FL_GRAPHITE, lineHeight: 1.8, paddingTop: isMobile ? 0 : 8 }}>
-              No add-ons, no tiering. The same considered package for every client — because the work that moves a business is the same work, regardless of size.
+              Six parts. One job: turn your clicks into booked meetings.
             </p>
           </div>
           <div style={{
@@ -263,12 +277,12 @@ function FLWhatWeDo() {
             gap: 0, borderTop: `1px solid ${FL_LINEN}`, borderLeft: `1px solid ${FL_LINEN}`,
           }}>
             {[
-              { n: 'i.',   t: 'Weekly Working Sessions', d: '90 minutes, every week, with the same consultant. Agendas shared 24h ahead.' },
-              { n: 'ii.',  t: 'Written Diagnostic',      d: 'A written diagnostic of how the business runs today.' },
-              { n: 'iii.', t: 'Bottleneck Map',          d: 'Every constraint ranked. Visual, single-page.' },
-              { n: 'iv.',  t: 'Quarterly Roadmap',       d: 'Milestones, executable tasks and metrics. An executable plan — not a fluffy document or one-off PDF.' },
-              { n: 'v.',   t: 'Direct Line',             d: 'Phone, email and WhatsApp access between sessions. We answer same-day.' },
-              { n: 'vi.',  t: 'Closing Scorecard',       d: 'A measurable review of what shifted, what did not, and what is next.' },
+              { n: 'i.',   t: 'The page',          d: 'A page we write, build and host on your subdomain' },
+              { n: 'ii.',  t: 'The form',          d: 'A short form that shows who’s serious' },
+              { n: 'iii.', t: 'The video',         d: 'A sales video, from your answers to our questions' },
+              { n: 'iv.',  t: 'The call',          d: 'Susie, who phones each lead within 5 minutes' },
+              { n: 'v.',   t: 'Lead emails',       d: 'An email with the lead’s details for every booking' },
+              { n: 'vi.',  t: 'Report and tweaks', d: 'A monthly report and page tweaks' },
             ].map((it, i) => (
               <div key={it.n} className={`fl-reveal fl-r${(i % 6) + 1}`} style={{
                 padding: isMobile ? '24px' : '26px 28px',
@@ -280,6 +294,144 @@ function FLWhatWeDo() {
                 <p style={{ margin: 0, fontSize: 13.5, color: FL_GRAPHITE, lineHeight: 1.7 }}>{it.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </FLSection>
+
+      {/* ── 5. "I already pay an agency." ── */}
+      <FLSection
+        id="fl-wwd-agency"
+        style={{
+          minHeight: sectionMinH,
+          background: FL_LINEN,
+          display: 'flex', alignItems: 'center',
+          padding: isMobile ? '64px 24px' : '40px 40px',
+        }}
+      >
+        <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? 28 : 80, alignItems: 'start' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+              <FLEyebrow className="fl-reveal fl-r1">Your agency</FLEyebrow>
+              <h2 className="fl-reveal fl-r2" style={{
+                margin: 0, fontFamily: FL_DISPLAY,
+                fontSize: isMobile ? 40 : 64,
+                lineHeight: 1.05, fontWeight: 500, color: FL_NAVY, letterSpacing: -0.8,
+              }}>
+                <span style={{ fontStyle: 'italic' }}>“I already pay an agency.”</span>
+              </h2>
+            </div>
+            <div className="fl-reveal fl-r3" style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingTop: isMobile ? 0 : 14 }}>
+              <p style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 24 : 30, lineHeight: 1.3, fontWeight: 500, color: FL_NAVY }}>
+                Good. Keep them. They bring the clicks.
+              </p>
+              <p style={{ margin: 0, fontSize: 16, color: FL_INK, lineHeight: 1.8, fontFamily: FL_BODY }}>
+                We take over after the click: page, video, form and call.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FLSection>
+
+      {/* ── 6. Our first MSP partners — the shared-risk guarantee ── */}
+      <FLSection
+        id="fl-wwd-partners"
+        style={{
+          minHeight: sectionMinH,
+          background: FL_NAVY, color: FL_IVORY_2,
+          display: 'flex', alignItems: 'center',
+          padding: isMobile ? '72px 24px' : '60px 40px',
+          backgroundImage: `radial-gradient(circle at 20% 0%, rgba(167,138,78,.08), transparent 50%), radial-gradient(circle at 80% 100%, rgba(196,184,163,.06), transparent 50%)`,
+        }}
+      >
+        <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? 28 : 80, alignItems: 'start' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+              <FLEyebrow className="fl-reveal fl-r1" color="rgba(244,239,227,.7)">The guarantee</FLEyebrow>
+              <h2 className="fl-reveal fl-r2" style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 36 : 52, lineHeight: 1.05, fontWeight: 500, color: FL_IVORY_2, letterSpacing: -0.5 }}>
+                Who has this worked for?<br />
+                <span style={{ fontStyle: 'italic', color: FL_SAND_2 }}>You’d be one of the first.</span>
+              </h2>
+            </div>
+            <div className="fl-reveal fl-r3" style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingTop: isMobile ? 0 : 14 }}>
+              <p style={{ margin: 0, fontSize: 16, color: 'rgba(244,239,227,.8)', lineHeight: 1.8, fontFamily: FL_BODY }}>
+                We’re new to working with IT companies, and we say so.<br />
+                We’re looking for our first MSP partners.
+              </p>
+              <div style={{ padding: '18px 0 18px 22px', borderLeft: `1px solid ${FL_GOLD}` }}>
+                <p style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 21 : 24, lineHeight: 1.4, fontWeight: 500, color: FL_IVORY_2 }}>
+                  So we share the risk. If you qualify and we miss double your agreed starting number in 90 days, your monthly fee stops until we hit it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </FLSection>
+
+      {/* ── 7. Who builds it ── */}
+      <FLSection
+        id="fl-wwd-hancke"
+        style={{
+          minHeight: sectionMinH,
+          background: FL_IVORY,
+          display: 'flex', alignItems: 'center',
+          padding: isMobile ? '64px 24px' : '40px 40px',
+        }}
+      >
+        <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? 28 : 80, alignItems: 'start' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+              <FLEyebrow className="fl-reveal fl-r1">Meet Hancke</FLEyebrow>
+              <h2 className="fl-reveal fl-r2" style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 36 : 52, lineHeight: 1.05, fontWeight: 500, color: FL_NAVY, letterSpacing: -0.5 }}>
+                You talk to the person<br />
+                <span style={{ fontStyle: 'italic' }}>who builds it.</span>
+              </h2>
+            </div>
+            <div className="fl-reveal fl-r3" style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingTop: isMobile ? 0 : 14 }}>
+              <p style={{ margin: 0, fontSize: 16, color: FL_INK, lineHeight: 1.8, fontFamily: FL_BODY }}>
+                I’m Hancke. I started on an IT helpdesk. Then I worked as a developer and IT administrator.
+              </p>
+              <p style={{ margin: 0, fontSize: 16, color: FL_INK, lineHeight: 1.8, fontFamily: FL_BODY }}>
+                I know what a Tuesday full of tickets looks like. I haven’t run an MSP.
+              </p>
+              <p style={{ margin: 0, fontFamily: FL_DISPLAY, fontStyle: 'italic', fontSize: isMobile ? 22 : 26, lineHeight: 1.35, fontWeight: 500, color: FL_NAVY }}>
+                I build the part you don’t have time for.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FLSection>
+
+      {/* ── 8. FAQ — last section, so it scrolls through to the footer ── */}
+      <FLSection
+        id="fl-wwd-faq"
+        style={{
+          background: FL_LINEN,
+          padding: isMobile ? '64px 24px' : '80px 40px',
+        }}
+      >
+        <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr', gap: isMobile ? 28 : 72, alignItems: 'start' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <FLEyebrow className="fl-reveal fl-r1">FAQ</FLEyebrow>
+              <h2 className="fl-reveal fl-r2" style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 30 : 44, lineHeight: 1.05, fontWeight: 500, color: FL_NAVY, letterSpacing: -0.4 }}>
+                Questions <span style={{ fontStyle: 'italic' }}>before you book?</span>
+              </h2>
+              <p className="fl-reveal fl-r3" style={{ margin: 0, fontSize: 14.5, color: FL_GRAPHITE, lineHeight: 1.8 }}>
+                Here are short, straight answers.
+              </p>
+            </div>
+            <div className="fl-reveal fl-r3" style={{ display: 'flex', flexDirection: 'column' }}>
+              {FL_FAQ.map((f, i) => (
+                <div key={i} style={{
+                  display: 'flex', flexDirection: 'column', gap: 6, padding: '18px 0',
+                  borderTop: `1px solid ${FL_SAND}`,
+                  borderBottom: i === FL_FAQ.length - 1 ? `1px solid ${FL_SAND}` : 'none',
+                }}>
+                  <h3 style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 20 : 22, fontWeight: 600, color: FL_NAVY, lineHeight: 1.25 }}>{f.q}</h3>
+                  <p style={{ margin: 0, fontSize: 14.5, color: FL_GRAPHITE, lineHeight: 1.75 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </FLSection>
