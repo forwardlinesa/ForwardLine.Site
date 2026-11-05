@@ -100,8 +100,8 @@ function FLContact() {
             fontSize: isMobile ? 32 : 60,
             lineHeight: 1.08, fontWeight: 500, color: FL_IVORY_2, letterSpacing: -0.5, maxWidth: 880,
           }}>
-            The first conversation costs nothing.<br />
-            <span style={{ fontStyle: 'italic', color: FL_SAND_2 }}>The missed opportunity might.</span>
+            Book a short call.<br />
+            <span style={{ fontStyle: 'italic', color: FL_SAND_2 }}>See where your clicks drop off.</span>
           </h1>
           <FLDivider color="rgba(244,239,227,.3)" mark={FL_SAND_2} width="120px" />
         </div>
@@ -188,12 +188,12 @@ function FLContact() {
                     <path d="M2 10 L9 17 L22 3" strokeLinecap="square" />
                   </svg>
                 </div>
-                <h2 style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: 36, fontWeight: 500, color: FL_NAVY }}>Application Received</h2>
+                <h2 style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: 36, fontWeight: 500, color: FL_NAVY }}>Got it.</h2>
                 <p style={{ margin: 0, fontFamily: FL_BODY, fontSize: 15, color: FL_GRAPHITE, lineHeight: 1.75, maxWidth: 400 }}>
-                  Thank you. We will read your application and come back to you within one business day to schedule the call.
+                  We’ll call you.
                 </p>
                 <button onClick={() => setStatus('idle')} style={{ marginTop: 8, fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_GRAPHITE, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}>
-                  Submit another application
+                  Send another form
                 </button>
               </div>
             ) : (
@@ -204,15 +204,15 @@ function FLContact() {
                   </a>
                 </div>
                 <h2 style={{ margin: '14px 0 8px', fontFamily: FL_DISPLAY, fontSize: isMobile ? 28 : 38, fontWeight: 500, color: FL_NAVY, lineHeight: 1.1, letterSpacing: -0.3 }}>
-                  Tell us a little about your business.
+                  Tell us about your IT company.
                 </h2>
                 <p style={{ margin: '0 0 32px', fontSize: 14, color: FL_GRAPHITE, lineHeight: 1.75, fontFamily: FL_BODY, maxWidth: 520 }}>
-                  Tell us where the business is and where it is stuck. We will come back to you within one business day to schedule a call.
+                  Fill in your details. We’ll call you.
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 22 }}>
                   <FLField label="Full Name"  name="name"    placeholder="e.g. Helena Marsh"      required />
-                  <FLField label="Company"    name="company" placeholder="e.g. Marsh & Co." />
+                  <FLField label="Company"    name="company" placeholder="e.g. Marsh IT" />
                   <FLField label="Email"      name="email"   type="email" placeholder="helena@example.com" required />
                   <FLField label="Phone"      name="phone"   type="tel" placeholder="+27…" required />
                 </div>
@@ -222,7 +222,13 @@ function FLContact() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_GRAPHITE }}>Your role</span>
                     <div style={{ display: 'flex', gap: 0, border: `1px solid ${FL_SAND}`, flexWrap: 'wrap' }}>
-                      {['Founder-led', 'GM / COO', 'Leadership Team', 'Other'].map((s, i, arr) => (
+                      {/* value = what's submitted as _stage (unchanged); label = what's shown */}
+                      {[
+                        { value: 'Founder-led',     label: 'Owner' },
+                        { value: 'GM / COO',        label: 'CEO / GM' },
+                        { value: 'Leadership Team', label: 'Leadership Team' },
+                        { value: 'Other',           label: 'Other' },
+                      ].map(({ value: s, label }, i, arr) => (
                         <div key={s} onClick={() => setStage(s)} style={{
                           flex: 1, minWidth: isMobile ? '50%' : undefined,
                           padding: '14px 12px', textAlign: 'center',
@@ -231,7 +237,7 @@ function FLContact() {
                           color: stage === s ? FL_IVORY_2 : FL_NAVY,
                           background: stage === s ? FL_NAVY : 'transparent',
                           cursor: 'pointer', transition: 'all .15s ease',
-                        }}>{s}</div>
+                        }}>{label}</div>
                       ))}
                     </div>
                   </div>
@@ -241,23 +247,23 @@ function FLContact() {
                     hint="2–3 sentences is plenty"
                     name="challenge"
                     textarea height={140}
-                    placeholder="Margins are tightening, the leadership team feels stretched, and we cannot tell whether it is a strategy problem or an operations problem…"
+                    placeholder="What ads do you run? How fast do you call leads back?"
                     required
                   />
                 </div>
 
                 {status === 'error' && (
                   <p style={{ margin: '16px 0 0', fontFamily: FL_BODY, fontSize: 13, color: '#B94040', lineHeight: 1.6 }}>
-                    Something went wrong. Please try emailing us directly at forwardlinesa@gmail.com
+                    That didn’t send. Email us at forwardlinesa@gmail.com.
                   </p>
                 )}
 
                 <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, paddingTop: 24, borderTop: `1px solid ${FL_LINEN}`, flexWrap: 'wrap' }}>
                   <span style={{ fontFamily: FL_DISPLAY, fontStyle: 'italic', fontSize: 16, color: FL_GRAPHITE, maxWidth: 360 }}>
-                    We respond within one business day.
+                    You talk to the person who builds it.
                   </span>
                   <FLButton type="submit" disabled={status === 'sending'} variant="filled">
-                    {status === 'sending' ? 'Sending…' : 'Send Application →'}
+                    {status === 'sending' ? 'Sending…' : 'Send my details →'}
                   </FLButton>
                 </div>
               </form>
@@ -274,7 +280,7 @@ function FLContact() {
           gap: 16, fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_GRAPHITE,
           flexWrap: 'wrap',
         }}>
-          {['◆ One business day reply', 'Direct line to the team', 'No-obligation first call', 'Confidential by default'].map(t => (
+          {['◆ We open your page on the call', 'Your agency keeps the ads', 'Your main site stays as it is', 'No setup fee for our first MSP partners'].map(t => (
             <span key={t}>{t}</span>
           ))}
         </div>

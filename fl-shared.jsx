@@ -38,8 +38,8 @@ const FL_PROMO_H   = 53;
 const FL_PROMO = {
   enabled:       true,
   landingUrl:    'https://go.forwardline.co.za/?utm_source=forwardline-site&utm_medium=banner&utm_campaign=site-banner',
-  badge:         'New Service',
-  badgeShort:    'New',
+  badge:         'For IT companies and MSPs',
+  badgeShort:    'IT/MSPs',
   headline:      'Your ads get clicks. Where are the meetings?',
   headlineShort: 'Clicks but no meetings?',
   cta:           'See how we fix it',
@@ -567,7 +567,9 @@ function FLPromoBanner() {
   const isMobile = bp === 'sm' || bp === 'xs';
   if (!FL_PROMO.enabled) return null;
 
-  const badgeText    = isMobile ? FL_PROMO.badgeShort : FL_PROMO.badge;
+  /* Full tag only on wide screens: it's long enough to squeeze the
+     headline on tablets. */
+  const badgeText    = (isMobile || bp === 'md') ? FL_PROMO.badgeShort : FL_PROMO.badge;
   const headlineText = isMobile ? FL_PROMO.headlineShort : FL_PROMO.headline;
   const ctaText      = isMobile ? FL_PROMO.ctaShort : FL_PROMO.cta;
 
@@ -658,7 +660,7 @@ function FLNav({ active = 'Home', onDark = false }) {
         )}
 
         {!isMobile && (
-          <FLButton href="#/contact" variant={onDark ? 'ghost' : 'filled'}>Book a Call →</FLButton>
+          <FLButton href="#/contact" variant={onDark ? 'ghost' : 'filled'}>Book my call →</FLButton>
         )}
 
         {isMobile && (
@@ -689,7 +691,7 @@ function FLNav({ active = 'Home', onDark = false }) {
           ))}
           <div style={{ paddingTop:16 }}>
             <FLButton href="#/contact" variant={onDark ? 'ghost' : 'filled'} onClick={() => setOpen(false)}>
-              Book a Call →
+              Book my call →
             </FLButton>
           </div>
         </div>
@@ -734,12 +736,12 @@ function FLFooter() {
         <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
           <FLLogo color={FL_IVORY_2} size={22} />
           <p style={{ fontFamily: FL_BODY, fontSize:13, lineHeight:1.7, color:'rgba(244,239,227,.65)', maxWidth:300, margin:0 }}>
-            A growth consultancy for owners and general managers ready to move past the ceiling they hit.
+            We turn ad clicks into booked meetings for South African IT companies and MSPs.
           </p>
         </div>
         {[
           { title:'Navigate',   items:[['Home','#/',null],['What We Do','#/wwd',null],['Free Tools','#/tools',null],['Contact','#/contact',null]] },
-          { title:'Engagement', items:[['The Quarter','#/wwd',null],['Process','#/wwd','fl-wwd-process'],["What's Included",'#/wwd','fl-wwd-included']] },
+          { title:'How it works', items:[['The four steps','#/wwd','fl-wwd-process'],['What you get','#/wwd','fl-wwd-included']] },
           { title:'Reach Us',   items:[['forwardlinesa@gmail.com','mailto:forwardlinesa@gmail.com',null],['Facebook','https://www.facebook.com/ForwardLineSA/',null]] },
         ].map(col => (
           <div key={col.title} style={{ display:'flex', flexDirection:'column', gap:10 }}>
@@ -763,8 +765,8 @@ function FLFooter() {
         color:'rgba(244,239,227,.5)', textTransform:'uppercase',
         flexWrap:'wrap', gap:12,
       }}>
-        <span>© 2026 ForwardLine Consultancy</span>
-        {!isMobile && <span>Find and Fix Business Growth Blockers</span>}
+        <span>© 2026 ForwardLine</span>
+        {!isMobile && <span>Your agency brings the clicks. We book the meetings.</span>}
         <span>
           <a
             href="#"

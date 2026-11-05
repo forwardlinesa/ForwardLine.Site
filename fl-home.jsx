@@ -57,11 +57,11 @@ function FLTestimonialRotator({ isMobile }) {
       style={{
         display:'flex', flexDirection:'column', alignItems:'center',
         textAlign:'center', gap: isMobile ? 18 : 22,
-        paddingBottom: isMobile ? 36 : 42,
+        paddingBottom: isMobile ? 30 : 30,
       }}
     >
       <FLEyebrow className="fl-reveal fl-r1" color="rgba(216,204,187,.78)">
-        A Word From A Client
+        People who’ve worked with Hancke
       </FLEyebrow>
 
       <span className="fl-reveal fl-r2" style={{
@@ -263,22 +263,24 @@ function FLHome() {
           <FLNav active="Home" onDark />
           <div style={{
             flex:1,
-            padding: isMobile ? '40px 24px' : '40px 40px',
+            padding: isMobile ? '40px 24px' : '28px 40px',
             display:'flex',
             flexDirection:'column',
             alignItems:'center',
             justifyContent:'center',
-            gap: isMobile ? 22 : 26,
+            gap: isMobile ? 22 : 20,
             textAlign:'center',
           }}>
+            <FLEyebrow className="fl-reveal fl-r1" color="rgba(244,239,227,.78)" style={{ fontSize: isMobile ? 12 : 15, letterSpacing: isMobile ? 3 : 4 }}>
+              For South African IT companies and MSPs running ads
+            </FLEyebrow>
             <h1 className="fl-reveal fl-r2" style={{
               margin:0, fontFamily: FL_DISPLAY, color: FL_IVORY_2,
               fontSize: heroSize, lineHeight:1.02, fontWeight:500,
               letterSpacing:-1, maxWidth:1000,
             }}>
-              Find and fix the
-              <span style={{ fontStyle:'italic', fontWeight:400 }}> growth blockers </span>
-              quietly costing your business.
+              We turn your ad clicks into
+              <span style={{ fontStyle:'italic', fontWeight:400 }}> booked meetings.</span>
             </h1>
             <div className="fl-reveal fl-r3" style={{ width:120 }}>
               <FLDivider color="rgba(244,239,227,.35)" mark={FL_SAND_2} width="120px" />
@@ -289,12 +291,17 @@ function FLHome() {
               fontStyle:'italic', color:'rgba(244,239,227,.85)',
               maxWidth:640, lineHeight:1.5, fontWeight:400,
             }}>
-              Honest diagnosis. Actionable plan. Focused execution. —<br />
-              Walk away with a plan you can act on now, and start seeing results this quarter, not next year.
+              We build the page, sales video and form. Our AI caller Susie phones each lead within 5 minutes.
+            </p>
+            <p className="fl-reveal fl-r4" style={{
+              margin:0, fontFamily: FL_BODY, fontSize: isMobile ? 14 : 15,
+              color:'rgba(244,239,227,.78)', maxWidth:560, lineHeight:1.6,
+            }}>
+              Double your meetings in 90 days, or your monthly fee stops. <span style={{ fontStyle:'italic' }}>If you qualify.</span>
             </p>
             <div className="fl-reveal fl-r5" style={{ display:'flex', gap:14, marginTop:4, flexWrap:'wrap', justifyContent:'center' }}>
-              <FLButton href={flGo('button', 'home-hero')} variant="sand">See how we fix it →</FLButton>
-              <FLButton href="#/wwd"     variant="ghost">See How We Work</FLButton>
+              <FLButton href={flGo('button', 'home-hero')} variant="sand">Book my call →</FLButton>
+              <FLButton href="#/wwd"     variant="ghost">See how it works</FLButton>
             </div>
           </div>
           {!isMobile && (
@@ -302,9 +309,9 @@ function FLHome() {
               display:'flex', justifyContent:'center', alignItems:'center',
               padding:'18px 40px', borderTop:'1px solid rgba(244,239,227,.18)',
               color:'rgba(244,239,227,.7)', fontFamily: FL_CAPS,
-              fontSize:12, letterSpacing:3, textTransform:'uppercase',
+              fontSize:12, letterSpacing:3, textTransform:'uppercase', textAlign:'center',
             }}>
-              <span>Trusted by owners from Cape Town to New York</span>
+              <span>We filled in the contact forms of 10 SA IT companies running ads. 7 never called back.</span>
             </div>
           )}
         </div>
@@ -319,36 +326,51 @@ function FLHome() {
           display:'flex',
           alignItems:'center',
           justifyContent:'center',
-          padding: isMobile ? '72px 24px' : '80px 40px',
+          padding: isMobile ? '72px 24px' : '56px 40px',
         }}
       >
         <div style={{
           maxWidth:880, margin:'0 auto',
-          display:'flex', flexDirection:'column', alignItems:'center', gap:28,
+          display:'flex', flexDirection:'column', alignItems:'center', gap:22,
           textAlign:'center',
         }}>
-          <FLEyebrow className="fl-reveal fl-r1">An Outside Eye, On The Inside</FLEyebrow>
-          <p className="fl-reveal fl-r2" style={{
+          <FLEyebrow className="fl-reveal fl-r1">After the click</FLEyebrow>
+          <h2 className="fl-reveal fl-r2" style={{
             margin:0, fontFamily: FL_DISPLAY,
             fontSize: isMobile ? 28 : 46,
             lineHeight:1.22, fontWeight:500, color: FL_NAVY, letterSpacing:-0.2,
           }}>
-            You are too close to your own system to see what is holding it back.
-            <span style={{ color: FL_GRAPHITE, fontStyle:'italic' }}> That is not a flaw. It is the reason ForwardLine exists.</span>
+            Whose job is
+            <span style={{ color: FL_GRAPHITE, fontStyle:'italic' }}> your page?</span>
+          </h2>
+          <p className="fl-reveal fl-r3" style={{
+            margin:0, fontSize: isMobile ? 18 : 20, color: FL_GRAPHITE,
+            lineHeight:1.75, maxWidth:780, fontFamily: FL_BODY,
+          }}>
+            Some IT companies have a marketing team and a leader who chases every lead.<br />
+            Yours may not. Worldwide, 58% of MSPs have little or no marketing experience.<br />
+            Your agency runs the ads. Your techs run the tickets.<br />
+            So who phones the lead at 4pm on a Tuesday?
           </p>
-          <div className="fl-reveal fl-r3" style={{ width:80 }}>
+          <div className="fl-reveal fl-r4" style={{ width:80 }}>
             <FLDivider width="80px" />
           </div>
           <p className="fl-reveal fl-r4" style={{
-            margin:0, fontSize:20, color: FL_GRAPHITE,
-            lineHeight:1.85, maxWidth:680, fontFamily: FL_BODY,
+            margin:0, fontFamily: FL_DISPLAY, fontStyle:'italic',
+            fontSize: isMobile ? 22 : 28, lineHeight:1.35, fontWeight:500,
+            color: FL_NAVY, maxWidth:780,
           }}>
-            We work with business owners and managers for one focused session. We map the operation, surface the bottlenecks, and work out the systems to put in place to fix them — together.
+            Ask your agency one question. When did you last change our landing page?
+          </p>
+          <p className="fl-reveal fl-r5" style={{
+            margin:0, fontSize:12, color: FL_GRAPHITE, fontFamily: FL_BODY, lineHeight:1.6,
+          }}>
+            ConnectWise survey of 1,000 MSPs, global.
           </p>
         </div>
       </FLSection>
 
-      {/* ── Section 3 — Three value props ── */}
+      {/* ── Section 3 — Four value props (the microwave) ── */}
       <FLSection
         id="fl-sec-values"
         style={{
@@ -368,14 +390,14 @@ function FLHome() {
             flexDirection: isMobile ? 'column' : 'row',
             gap: isMobile ? 16 : 0,
           }}>
-            <div style={{ display:'flex', flexDirection:'column', gap:14, maxWidth:520 }}>
-              <FLEyebrow className="fl-reveal fl-r1">What You Get</FLEyebrow>
+            <div style={{ display:'flex', flexDirection:'column', gap:14, maxWidth:640 }}>
+              <FLEyebrow className="fl-reveal fl-r1">The microwave</FLEyebrow>
               <h2 className="fl-reveal fl-r2" style={{
                 margin:0, fontFamily: FL_DISPLAY,
                 fontSize: isMobile ? 32 : 46,
                 lineHeight:1.05, fontWeight:500, color: FL_NAVY, letterSpacing:-0.5,
               }}>
-                Three deliverables<br />that change everything.
+                Cold leads don’t trust you yet.<br /><span style={{ fontStyle:'italic' }}>So we warm them up.</span>
               </h2>
             </div>
             {!isMobile && (
@@ -383,19 +405,20 @@ function FLHome() {
                 margin:0, fontSize:17, color: FL_GRAPHITE,
                 lineHeight:1.8, maxWidth:400, fontFamily: FL_BODY,
               }}>
-                No fluff. No eight-month engagement. Just the work that will actually move your business forward.
+                Ad leads come fast. They don’t know you. They don’t trust you. We built a system that warms them up. We call it the microwave.
               </p>
             )}
           </div>
           <div style={{
             display:'grid',
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+            gridTemplateColumns: isMobile ? '1fr' : isMd ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
             gap:24,
           }}>
             {[
-              { n:'01', t:'Fresh Eyes On Old Systems', d:'A fresh look at your business. We see the assumptions you have stopped questioning, and the dependencies nobody wrote down.', img: FL_IMG.signature },
-              { n:'02', t:'Bottleneck Detection',      d:'We map where time, money and momentum are leaking — across people, process and tooling — and prioritize what will return the most value, and fix it first.', img: FL_IMG.kanban },
-              { n:'03', t:'A Measurable Growth Plan',  d:'A clear growth plan: the bottlenecks named, the fixes ordered, and a step-by-step roadmap with milestones and metrics. No 80-page PDF — a working document that delivers results when executed.', img: FL_IMG.desk },
+              { n:'01', t:'The page.',     d:'One job: get the booking.', img: FL_IMG.signature },
+              { n:'02', t:'The video.',    d:'They see your face and hear what you do.', img: FL_IMG.kanban },
+              { n:'03', t:'The form.',     d:'A few questions show who’s serious.', img: FL_IMG.desk },
+              { n:'04', t:'Susie’s call.', d:'She phones each lead within 5 minutes and offers a meeting.', img: FL_IMG.handshake },
             ].map((card, i) => (
               <div
                 key={card.n}
@@ -453,49 +476,41 @@ function FLHome() {
                 padding:'22px 26px', maxWidth:280,
               }}>
                 <div style={{ fontFamily: FL_DISPLAY, fontSize: 20, lineHeight:1.3, color: FL_SAND_2, fontWeight:500, fontStyle:'italic' }}>
-                  Specialists in operations<br />for small and medium businesses.
+                  6.1% vs 14.1%
                 </div>
                 <div style={{ fontFamily: FL_CAPS, fontSize:9.5, letterSpacing:3, textTransform:'uppercase', marginTop:10, color:'rgba(244,239,227,.65)' }}>
-                  Our Focus
+                  Typical page vs top 25%
                 </div>
               </div>
             )}
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap:18 }}>
-            <FLEyebrow className="fl-reveal fl-r2">Why ForwardLine</FLEyebrow>
+            <FLEyebrow className="fl-reveal fl-r2">Why double</FLEyebrow>
             <h2 className="fl-reveal fl-r3" style={{
               margin:0, fontFamily: FL_DISPLAY,
               fontSize: h2Size, lineHeight:1.08, fontWeight:500,
               color: FL_NAVY, letterSpacing:-0.4,
             }}>
-              Built for owners who are <span style={{ fontStyle:'italic' }}>frustrated</span> their business isn’t growing fast enough.
+              Some pages get <span style={{ fontStyle:'italic' }}>twice</span> the response.
             </h2>
             <p className="fl-reveal fl-r4" style={{
               margin:0, fontSize:18, color: FL_GRAPHITE,
               lineHeight:1.8, fontFamily: FL_BODY,
             }}>
-              Most businesses stop growing — and it isn’t a strategy problem. The systems that got you here simply aren’t built to take you to the next million. They are now the thing holding you back. That’s where ForwardLine comes in — asking the hard questions and putting better systems in place.
+              The typical professional services page turns 6.1% of visitors into leads.<br />
+              The top 25% turn 14.1% or more.
             </p>
-            <FLEyebrow className="fl-reveal fl-r5" style={{ marginTop:8 }}>Our Principles</FLEyebrow>
-            <div className="fl-reveal fl-r5" style={{ display:'flex', flexDirection:'column', gap:0, marginTop:0 }}>
-              {[
-                { t:'Intentional, not transactional.', d:'Your business matters to you — so it matters to us. We come prepared, and we don’t disappear once you have the plan in hand. You can still reach out to us afterward.' },
-                { t:'Focused, not drawn-out.',         d:'Two hours, not months of meetings. We get to the point, hand you a plan, and respect your time.' },
-                { t:'Honest by default.',              d:'Trust and transparency aren’t slogans here — they’re the work. We tell you what is actually holding your business back. We are hired to fix the problem, not to save your feelings.' },
-              ].map((p, i) => (
-                <div key={i} style={{
-                  display:'flex', gap:20, padding:'16px 0',
-                  borderTop:`1px solid ${FL_LINEN}`,
-                  borderBottom: i === 2 ? `1px solid ${FL_LINEN}` : 'none',
-                }}>
-                  <span style={{ fontFamily: FL_DISPLAY, fontSize:20, color: FL_SAND, fontWeight:500, minWidth:28 }}>0{i + 1}</span>
-                  <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
-                    <span style={{ fontFamily: FL_DISPLAY, fontSize:23, fontWeight:600, color: FL_NAVY }}>{p.t}</span>
-                    <span style={{ fontSize:16, color: FL_GRAPHITE, lineHeight:1.65 }}>{p.d}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="fl-reveal fl-r5" style={{
+              margin:0, fontSize:18, color: FL_NAVY,
+              lineHeight:1.8, fontFamily: FL_BODY,
+            }}>
+              That gap is why we aim for double. It’s a gap between pages, so we back it with a guarantee.
+            </p>
+            <p className="fl-reveal fl-r5" style={{
+              margin:0, fontSize:12, color: FL_GRAPHITE, fontFamily: FL_BODY, lineHeight:1.6,
+            }}>
+              Unbounce Conversion Benchmark Report 2024, professional services.
+            </p>
           </div>
         </div>
       </FLSection>
@@ -523,7 +538,7 @@ function FLHome() {
 
           {/* Frieze rule */}
           <div className="fl-reveal fl-r5" style={{
-            display:'flex', alignItems:'center', gap:18, marginBottom: isMobile ? 24 : 28,
+            display:'flex', alignItems:'center', gap:18, marginBottom: isMobile ? 22 : 22,
           }}>
             <div style={{ flex:1, height:1, background:'rgba(216,204,187,.25)' }} />
             <span style={{
@@ -541,10 +556,10 @@ function FLHome() {
             alignItems:'start',
           }}>
             {[
-              { n:'2',    t:'Hours between you and your growth plan' },
-              { n:'12',   t:'Weeks to execute the plan we hand you — measured in weeks, not years' },
-              { n:'1:1',  t:'One consultant, one client — full focus on your business' },
-              { n:'100%', t:'Every session closes with a plan you can take action on the next day' },
+              { n:'10',    t:'SA IT companies running ads whose forms we filled in' },
+              { n:'7',     t:'never called back' },
+              { n:'2',     t:'of those 7 sent only an auto-reply' },
+              { n:'5 min', t:'how fast Susie phones your lead' },
             ].map((s, i) => (
               <div key={i} style={{
                 display:'flex', flexDirection:'column', gap:6,
@@ -558,11 +573,20 @@ function FLHome() {
                 }}>{s.n}</span>
                 <span style={{
                   fontFamily: FL_BODY, fontSize:15,
-                  color:'rgba(244,239,227,.7)', lineHeight:1.55, maxWidth:210,
+                  color:'rgba(244,239,227,.7)', lineHeight:1.55, maxWidth:240,
                 }}>{s.t}</span>
               </div>
             ))}
           </div>
+
+          {/* Note on the form test — small print under the numerals */}
+          <p className="fl-reveal fl-r6" style={{
+            margin: isMobile ? '22px 0 0' : '18px 0 0',
+            fontFamily: FL_BODY, fontSize:13, lineHeight:1.65,
+            color:'rgba(244,239,227,.55)',
+          }}>
+            Our message was a business enquiry from ForwardLine, not a request for IT support. So some may have ranked it low. It still shows what happens to a form nobody owns.
+          </p>
         </div>
       </FLSection>
 
@@ -592,19 +616,19 @@ function FLHome() {
             fontSize: isMobile ? 38 : 64,
             lineHeight:1.05, fontWeight:500, color: FL_IVORY_2, letterSpacing:-0.6,
           }}>
-            Ready to see what is <span style={{ fontStyle:'italic' }}>holding you back?</span>
+            Who phones your <span style={{ fontStyle:'italic' }}>next lead?</span>
           </h2>
           <p className="fl-reveal fl-r3" style={{
             margin:0, fontFamily: FL_DISPLAY, fontStyle:'italic',
             fontSize: isMobile ? 20 : 24,
             color:'rgba(244,239,227,.78)', maxWidth:640, lineHeight:1.55,
           }}>
-            Your ads get clicks. We turn them into meetings, so you can grow the business you always pictured.
+            A short call. We show you where your clicks drop off.
           </p>
           <div className="fl-reveal fl-r5" style={{
             display:'flex', gap:14, marginTop:14, flexWrap:'wrap', justifyContent:'center',
           }}>
-            <FLButton href={flGo('button', 'home-cta')} variant="sand">See how we fix it →</FLButton>
+            <FLButton href={flGo('button', 'home-cta')} variant="sand">Book my call →</FLButton>
           </div>
         </div>
       </FLSection>

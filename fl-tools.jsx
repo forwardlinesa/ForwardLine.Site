@@ -28,49 +28,49 @@ const FL_TOOLS = [
     slug: 'are-you-charging-enough',
     kind: 'Calculator',
     title: 'Are You Charging Enough?',
-    blurb: 'See how a small price rise drops almost straight to profit — and how many customers you could lose and still come out ahead.',
+    blurb: 'A small rise in your monthly fee lands as profit. See how many clients you could lose and keep the same profit.',
     html: 'tools/are-you-charging-enough.html',
   },
   {
     slug: 'what-one-customer-is-worth',
     kind: 'Calculator',
     title: 'What One Customer Is Worth to You',
-    blurb: 'Three numbers in, one honest figure out — how much a single customer brings you over the whole relationship, not just the first sale.',
+    blurb: 'Three numbers show what one client is worth over the years they stay.',
     html: 'tools/what-one-customer-is-worth.html',
   },
   {
     slug: 'new-customer-real-cost',
     kind: 'Calculator',
-    title: 'What a New Customer Really Costs',
-    blurb: 'No ad spend doesn’t mean free. You pay in hours — quotes, calls, follow-ups. Put a rand value on what winning one customer actually costs you.',
+    title: 'What a New Customer Costs You',
+    blurb: 'No ad spend? You pay for new clients in hours: calls, quotes and follow-ups. Put a rand value on one new client.',
     html: 'tools/new-customer-real-cost.html',
   },
   {
     slug: 'money-hiding-in-old-customers',
     kind: 'Calculator',
     title: 'Money Hiding in Your Old Customers',
-    blurb: 'Two numbers show you the cash sitting in customers you already have — often the fastest money in your business.',
+    blurb: 'Two numbers show the cash sitting in past clients you’ve lost touch with.',
     html: 'tools/money-hiding-in-old-customers.html',
   },
   {
     slug: 'what-slow-replies-cost',
     kind: 'Calculator',
     title: 'What Slow Replies Cost You',
-    blurb: 'The first business to reply usually wins the job. See what your current response time is quietly costing you every month.',
+    blurb: 'Slow replies lose clients. See what your reply time costs your IT company each month.',
     html: 'tools/what-slow-replies-cost.html',
   },
   {
     slug: 'the-leaky-bucket',
-    kind: 'Diagnostic',
+    kind: 'Check',
     title: 'The Leaky Bucket',
-    blurb: 'Pouring in more leads won’t help if the bucket leaks. Walk your numbers from enquiry to repeat sale and find the biggest hole.',
+    blurb: 'Fix the leak before you buy more leads. Walk your numbers from enquiry to referral and find the biggest hole.',
     html: 'tools/the-leaky-bucket.html',
   },
   {
     slug: 'wheres-your-bottleneck',
-    kind: 'Diagnostic',
+    kind: 'Check',
     title: 'Where’s Your Bottleneck?',
-    blurb: 'Your business only ever has one real blocker at a time. Three quick taps surface the constraint holding your growth back right now.',
+    blurb: 'One thing holds your IT company back. Three quick taps find it.',
     html: 'tools/wheres-your-bottleneck.html',
   },
 ];
@@ -233,7 +233,7 @@ function FLToolWidget({ tool }) {
           }}>
             <span>←</span> All Free Tools
           </a>
-          <FLButton href={flGo('button', 'tool-' + tool.slug)} variant="outline" style={{ padding: '10px 20px', fontSize: 10 }}>See how we fix it →</FLButton>
+          <FLButton href={flGo('button', 'tool-' + tool.slug)} variant="outline" style={{ padding: '10px 20px', fontSize: 10 }}>Book my call →</FLButton>
         </div>
         <div style={{ flex: 1 }}>
           <FLToolFrame src={tool.html} title={tool.title} />
@@ -283,12 +283,12 @@ function FLToolWidget({ tool }) {
                 <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_GOLD }}>In the workshop</span>
               </div>
               <p style={{ margin: 0, fontSize: 14, color: FL_GRAPHITE, lineHeight: 1.8, maxWidth: 560 }}>
-                We're finishing this one off. It'll open right here — free to use, the same instrument we run inside a quarter. In the meantime, the rest of the toolkit is ready to use.
+                We’re finishing this one. Try the other free tools.
               </p>
 
               <div style={{ display: 'flex', gap: 14, marginTop: 12, flexWrap: 'wrap' }}>
-                <FLButton href={flGo('button', 'tool-' + tool.slug)} variant="filled">See how we fix it →</FLButton>
-                <FLButton href="#/tools" variant="outline">Browse the Toolkit</FLButton>
+                <FLButton href={flGo('button', 'tool-' + tool.slug)} variant="filled">Book my call →</FLButton>
+                <FLButton href="#/tools" variant="outline">See the free tools</FLButton>
               </div>
             </div>
           </div>
@@ -334,27 +334,27 @@ function FLTools({ slug = null }) {
           <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr', gap: isMobile ? 32 : 80, alignItems: 'start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                <FLEyebrow className="fl-reveal fl-r1">Free Tools · The Instruments We Use</FLEyebrow>
+                <FLEyebrow className="fl-reveal fl-r1">For IT companies and MSPs</FLEyebrow>
                 <h1 className="fl-reveal fl-r2" style={{
                   margin: 0, fontFamily: FL_DISPLAY,
                   fontSize: isMobile ? 44 : 76,
                   lineHeight: 1.02, fontWeight: 500, color: FL_NAVY, letterSpacing: -1,
                 }}>
-                  The same tools<br />
-                  we run for clients.<br />
-                  <span style={{ fontStyle: 'italic' }}>Yours to use,<br />for free.</span>
+                  Run your own<br />
+                  numbers.<br />
+                  <span style={{ fontStyle: 'italic' }}>Free.</span>
                 </h1>
               </div>
               <div className="fl-reveal fl-r3" style={{ display: 'flex', flexDirection: 'column', gap: 18, paddingTop: isMobile ? 0 : 14 }}>
                 <p style={{ margin: 0, fontSize: 16, color: FL_INK, lineHeight: 1.8, fontFamily: FL_BODY }}>
-                  When we sit down with a business, we reach for a small set of instruments — quick diagnostics that cut through the noise and put a number on what's really going on. The cost of a customer. The value of one. The role that's quietly missing. The constraint holding everything back.
+                  See what slow replies and lost leads cost your IT company.
                 </p>
                 <p style={{ margin: 0, fontSize: 14.5, color: FL_GRAPHITE, lineHeight: 1.8, fontFamily: FL_BODY }}>
-                  We've opened them up. No sign-up, no catch — the same tools we use internally for diagnostic checks, free for anyone to put to work. Pick one below and get an honest read in a couple of minutes.
+                  Pick a tool below. Get your number in a few minutes.
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 6 }}>
                   <span style={{ width: 56, height: 1, background: FL_NAVY }} />
-                  <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_NAVY }}>Measure · Diagnose · Decide</span>
+                  <span style={{ fontFamily: FL_CAPS, fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: FL_NAVY }}>Free · No sign-up</span>
                 </div>
               </div>
             </div>
@@ -362,7 +362,7 @@ function FLTools({ slug = null }) {
         </div>
       </FLSection>
 
-      {/* ── 2. The toolkit grid ── */}
+      {/* ── 2. The free tools grid ── */}
       <FLSection
         id="fl-tools-grid"
         style={{
@@ -375,13 +375,13 @@ function FLTools({ slug = null }) {
         <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr', gap: isMobile ? 28 : 72, alignItems: 'start', marginBottom: isMobile ? 32 : 44 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <FLEyebrow className="fl-reveal fl-r1">The Toolkit</FLEyebrow>
+              <FLEyebrow className="fl-reveal fl-r1">Free tools</FLEyebrow>
               <h2 className="fl-reveal fl-r2" style={{ margin: 0, fontFamily: FL_DISPLAY, fontSize: isMobile ? 30 : 44, lineHeight: 1.05, fontWeight: 500, color: FL_NAVY, letterSpacing: -0.4 }}>
-                Seven ways to see <span style={{ fontStyle: 'italic' }}>your</span> numbers clearly.
+                Seven tools. <span style={{ fontStyle: 'italic' }}>Your</span> numbers, in minutes.
               </h2>
             </div>
             <p className="fl-reveal fl-r3" style={{ margin: 0, fontSize: 14.5, color: FL_GRAPHITE, lineHeight: 1.8, paddingTop: isMobile ? 0 : 8 }}>
-              Each tool stands on its own — open it, answer a few questions, get a number you can act on the same day. Calculators for the economics, diagnostics for the harder calls. Start anywhere.
+              Each tool stands alone. Answer a few questions. Get a number you can act on today.
             </p>
           </div>
 
